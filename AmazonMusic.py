@@ -43,7 +43,8 @@ def search_song(song_title, song_author):
     time.sleep(3)
     if search_url not in driver.current_url:
         driver.get(search_url)
-    query_contents = song_title + " " + song_author
+    # Song is added to filter out albums
+    query_contents = song_title + " " + song_author + " song"
     fill_field(By.ID ,'navbarSearchInput', query_contents)
     time.sleep(1)
     click_element(By.ID, 'navbarSearchInputButton')
